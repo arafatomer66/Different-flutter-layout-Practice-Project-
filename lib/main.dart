@@ -2,23 +2,37 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'quiz/quiz.dart';
 import 'quiz/result.dart';
+import 'transaction.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return _MyAppState();
-  }
-}
+class MyApp extends StatelessWidget {
+  final List<Transaction> transactions = [
+    Transaction(
+      id: 't1',
+      title: 'New Shoes',
+      amount: 12.99,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't2',
+      title: 'New Mobile',
+      amount: 112.99,
+      date: DateTime.now(),
+    ),
+  ];
 
-class _MyAppState extends State<MyApp> {
+  String title;
+
+  String amount;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -26,16 +40,87 @@ class _MyAppState extends State<MyApp> {
           title: Text('Expense Tracker'),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               width: double.infinity,
               child: Card(
-                child: Text('Chart'),
+                child: Container(
+//                  width: 150,
+                  child: Text('Chart'),
+                ),
               ),
             ),
             Card(
-              child: Text('Lists'),
+              elevation: 5,
+              child: Container(
+                padding: EdgeInsets.all(15),
+                child: Column(
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Title '),
+                      controller: titleController,
+                    ),
+                    TextField(
+                        decoration: InputDecoration(labelText: 'Amount '),
+                        controller: amountController),
+                    FlatButton(
+                      child: Text('Add Transaction'),
+                      textColor: Colors.purple,
+                      onPressed: () {
+                        print(titleController);
+                        print(amountController);
+                      },
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Column(
+              children: transactions.map((tx) {
+                return Card(
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.symmetric(
+                          vertical: 10,
+                          horizontal: 15,
+                        ),
+                        child: Text(
+//                          tx.amount.toString(),
+                          '\$${tx.amount}',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.purple,
+                              fontSize: 20),
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 2,
+                          ),
+                        ),
+                        padding: EdgeInsets.all(10),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            tx.title,
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            DateFormat('yyyy-MM-dd').format(tx.date),
+                            style: TextStyle(color: Colors.grey),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                );
+              }).toList(),
             )
           ],
         ),
