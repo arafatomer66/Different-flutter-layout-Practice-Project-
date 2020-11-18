@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:learn_flutter_basic/expense_tracker/new_transaction.dart';
 import 'package:learn_flutter_basic/expense_tracker/transaction_list.dart';
 import 'package:learn_flutter_basic/expense_tracker/user_transaction.dart';
+import 'expense_tracker/chart.dart';
 import 'quiz/quiz.dart';
 import 'quiz/result.dart';
 import 'expense_tracker/model/transaction.dart';
@@ -34,6 +35,16 @@ class _MyAppState extends State<MyApp> {
     ),
   ];
 
+  List<Transaction> get recentTransactions {
+    return _userTransaction.where((tx) {
+      return tx.date.isAfter(
+        DateTime.now().subtract(
+          Duration(days: 7),
+        ),
+      );
+    }).toList();
+  }
+
   void _addNewTransaction(String title, double amount) {
     final newTx = Transaction(
         title: title,
@@ -62,17 +73,20 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Home(_startAddNewTransaction, _userTransaction));
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.purple),
+      home: Home(_startAddNewTransaction, _userTransaction, recentTransactions),
+    );
   }
 }
 
 class Home extends StatelessWidget {
   final Function _startAddNewTransaction;
-
   final _userTransaction;
+  final List recentTransactions;
 
-  Home(this._startAddNewTransaction, this._userTransaction);
+  Home(this._startAddNewTransaction, this._userTransaction,
+      this.recentTransactions);
 
   @override
   Widget build(BuildContext context) {
@@ -91,15 +105,7 @@ class Home extends StatelessWidget {
 //          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              width: double.infinity,
-              child: Card(
-                child: Container(
-//                  width: 150,
-                  child: Text('Chart'),
-                ),
-              ),
-            ),
+            Chart(recentTransactions),
             TransactionList(_userTransaction),
           ],
         ),
