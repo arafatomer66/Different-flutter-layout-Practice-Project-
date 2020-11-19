@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
     Transaction(
       id: 't2',
       title: 'New Mobile',
-      amount: 112.99,
+      amount: 11.99,
       date: DateTime.now(),
     ),
   ];
@@ -45,15 +45,23 @@ class _MyAppState extends State<MyApp> {
     }).toList();
   }
 
-  void _addNewTransaction(String title, double amount) {
+  void _addNewTransaction(String title, double amount, DateTime chosenDate) {
     final newTx = Transaction(
         title: title,
         amount: amount,
-        date: DateTime.now(),
+        date: chosenDate,
         id: DateTime.now().toString());
 
     setState(() {
       _userTransaction.add(newTx);
+    });
+  }
+
+  void deleteTransaction(String id) {
+    setState(() {
+      _userTransaction.removeWhere((tx) {
+        return tx.id == id;
+      });
     });
   }
 
@@ -75,18 +83,20 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.purple),
-      home: Home(_startAddNewTransaction, _userTransaction, recentTransactions),
+      home: Home(_startAddNewTransaction, _userTransaction, recentTransactions,
+          deleteTransaction),
     );
   }
 }
 
 class Home extends StatelessWidget {
   final Function _startAddNewTransaction;
+  final Function deleteTransaction;
   final _userTransaction;
   final List recentTransactions;
 
   Home(this._startAddNewTransaction, this._userTransaction,
-      this.recentTransactions);
+      this.recentTransactions, this.deleteTransaction);
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +116,7 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Chart(recentTransactions),
-            TransactionList(_userTransaction),
+            TransactionList(_userTransaction, deleteTransaction)
           ],
         ),
       ),
