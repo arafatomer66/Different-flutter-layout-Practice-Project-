@@ -94,8 +94,11 @@ class _NewTransactionState extends State<NewTransaction> {
               ),
             ),
             RaisedButton(
-              child: Text('Add Transaction'),
-              color: Theme.of(context).primaryColor,
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Text('Add Transaction'),
+              ),
+              color: Colors.yellow,
               textColor: Colors.white,
               onPressed: submitData,
             ),

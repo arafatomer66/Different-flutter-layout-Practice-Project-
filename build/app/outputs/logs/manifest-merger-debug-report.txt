@@ -18,9 +18,9 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\User\.gr
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\e5d23450977c2b96e566605cba9e8c80\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\0bf15744f5224b117e4e3c989895e24a\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\73dec8f06dda83861b05ec84e654c876\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\debug\AndroidManifest.xml:1:1-11:12
+INJECTED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\debug\AndroidManifest.xml:1:1-11:12
+INJECTED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\debug\AndroidManifest.xml:1:1-11:12
 	package
 		ADDED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\main\AndroidManifest.xml:2:5-46
 		INJECTED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\main\AndroidManifest.xml
@@ -37,6 +37,8 @@ INJECTED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\ap
 		ADDED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\main\AndroidManifest.xml:1:11-69
 application
 ADDED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\main\AndroidManifest.xml:3:4-40:19
+MERGED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\main\AndroidManifest.xml:3:4-40:19
+MERGED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\main\AndroidManifest.xml:3:4-40:19
 MERGED from [androidx.core:core:1.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\6b399c2363bb098ebde1725d903cbda0\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\6b399c2363bb098ebde1725d903cbda0\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\0bf15744f5224b117e4e3c989895e24a\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
@@ -45,8 +47,12 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Us
 		ADDED from [androidx.core:core:1.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\6b399c2363bb098ebde1725d903cbda0\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:label
 		ADDED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\main\AndroidManifest.xml:4:9-44
+		ADDED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\main\AndroidManifest.xml:4:9-44
 	android:icon
 		ADDED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\main\AndroidManifest.xml:5:9-43
+		ADDED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\main\AndroidManifest.xml:5:9-43
+	android:usesCleartextTraffic
+		ADDED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\debug\AndroidManifest.xml:8:18-53
 activity#com.example.learn_flutter_basic.MainActivity
 ADDED from C:\Users\User\AndroidStudioProjects\learn_flutter_basic\android\app\src\main\AndroidManifest.xml:6:9-34:20
 	android:launchMode

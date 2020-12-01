@@ -33,6 +33,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   intl: ^0.16.1
+  flutter_slidable: ^0.5.7
+  flip_card: ^0.4.4
+  get_it: ^5.0.1
+  http: ^0.12.2
+  provider: ^4.3.2+2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -49,10 +54,22 @@ flutter:
   assets:
     - assets/bob.png
     - assets/logo.png
-    - assets/image/
     - assets/image/1.png
     - assets/image/2.png
     - assets/image/3.png
+    - assets/icon/calendar.png
+    - assets/icon/group.png
+    - assets/icon/options.png
+    - assets/icon/person.png
+    - assets/icon/search.png
+    - assets/icon/right.png
+    - assets/icon/group_h.png
+    - assets/icon/single_h.png
+    - assets/icon/notification/Chat.png
+    - assets/icon/notification/Attachment.png
+    - assets/icon/notification/reminder.png
+    - assets/icon/notification/Subtask.png
+    - assets/icon/add.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
